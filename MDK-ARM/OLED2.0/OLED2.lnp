@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"oled2.0\startup_stm32f103xe.o"
+"oled2.0\main.o"
+"oled2.0\gpio.o"
+"oled2.0\i2c.o"
+"oled2.0\stm32f1xx_it.o"
+"oled2.0\stm32f1xx_hal_msp.o"
+"oled2.0\oled12864.o"
+"oled2.0\stm32f1xx_hal_gpio_ex.o"
+"oled2.0\stm32f1xx_hal_i2c.o"
+"oled2.0\stm32f1xx_hal.o"
+"oled2.0\stm32f1xx_hal_rcc.o"
+"oled2.0\stm32f1xx_hal_rcc_ex.o"
+"oled2.0\stm32f1xx_hal_gpio.o"
+"oled2.0\stm32f1xx_hal_dma.o"
+"oled2.0\stm32f1xx_hal_cortex.o"
+"oled2.0\stm32f1xx_hal_pwr.o"
+"oled2.0\stm32f1xx_hal_flash.o"
+"oled2.0\stm32f1xx_hal_flash_ex.o"
+"oled2.0\stm32f1xx_hal_exti.o"
+"oled2.0\stm32f1xx_hal_tim.o"
+"oled2.0\stm32f1xx_hal_tim_ex.o"
+"oled2.0\system_stm32f1xx.o"
+--strict --scatter "OLED2.0\OLED2.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "OLED2.map" -o OLED2.0\OLED2.0

@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OLED显示屏: Src/OLED12864.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="屏幕截图 2024-05-02 230304 - 副本(3).png"/></td>
+  <td id="projectalign">
+   <div id="projectname">OLED显示屏<span id="projectnumber">&#160;1.1</span>
+   </div>
+   <div id="projectbrief">大富大贵好</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_413f4e031a85da0d68269c6fd2f76e1c.html">Src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">OLED12864.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>OLED显示屏模块的板级支持包（BSP）  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;OLED12864.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:afb150fc31a8d20bfcd66e790910bd20d" id="r_afb150fc31a8d20bfcd66e790910bd20d"><td class="memItemLeft" align="right" valign="top"><a id="afb150fc31a8d20bfcd66e790910bd20d" name="afb150fc31a8d20bfcd66e790910bd20d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IICx</b>&#160;&#160;&#160;hi2c1</td></tr>
+<tr class="separator:afb150fc31a8d20bfcd66e790910bd20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853ecd062ef42382df2c252c182fb0a3" id="r_a853ecd062ef42382df2c252c182fb0a3"><td class="memItemLeft" align="right" valign="top"><a id="a853ecd062ef42382df2c252c182fb0a3" name="a853ecd062ef42382df2c252c182fb0a3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OLED_ADD</b>&#160;&#160;&#160;0x78</td></tr>
+<tr class="separator:a853ecd062ef42382df2c252c182fb0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577af6b2fa63d020529bb0aa983a686e" id="r_a577af6b2fa63d020529bb0aa983a686e"><td class="memItemLeft" align="right" valign="top"><a id="a577af6b2fa63d020529bb0aa983a686e" name="a577af6b2fa63d020529bb0aa983a686e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OLED_COM</b>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:a577af6b2fa63d020529bb0aa983a686e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a708f24dd4f84d14d1ac70a3a274b6e3f" id="r_a708f24dd4f84d14d1ac70a3a274b6e3f"><td class="memItemLeft" align="right" valign="top"><a id="a708f24dd4f84d14d1ac70a3a274b6e3f" name="a708f24dd4f84d14d1ac70a3a274b6e3f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OLED_DAT</b>&#160;&#160;&#160;0x40</td></tr>
+<tr class="separator:a708f24dd4f84d14d1ac70a3a274b6e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9885a007def27c91dd1720fb65d55f87" id="r_a9885a007def27c91dd1720fb65d55f87"><td class="memItemLeft" align="right" valign="top"><a id="a9885a007def27c91dd1720fb65d55f87" name="a9885a007def27c91dd1720fb65d55f87"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OLED_WIDTH</b>&#160;&#160;&#160;128</td></tr>
+<tr class="separator:a9885a007def27c91dd1720fb65d55f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149f081665424602c8c0f90a6e935f3b" id="r_a149f081665424602c8c0f90a6e935f3b"><td class="memItemLeft" align="right" valign="top"><a id="a149f081665424602c8c0f90a6e935f3b" name="a149f081665424602c8c0f90a6e935f3b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OLED_HEIGHT</b>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:a149f081665424602c8c0f90a6e935f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a7372e46460a371e4d94a0ee7f5f1a1fd" id="r_a7372e46460a371e4d94a0ee7f5f1a1fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7372e46460a371e4d94a0ee7f5f1a1fd">OLED_Init</a> (void)</td></tr>
+<tr class="memdesc:a7372e46460a371e4d94a0ee7f5f1a1fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">OLED屏幕初始化  <br /></td></tr>
+<tr class="separator:a7372e46460a371e4d94a0ee7f5f1a1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63134966824ed0359d7d686db7e0a2ea" id="r_a63134966824ed0359d7d686db7e0a2ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63134966824ed0359d7d686db7e0a2ea">WriteCmd</a> (uint8_t IIC_Command)</td></tr>
+<tr class="memdesc:a63134966824ed0359d7d686db7e0a2ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">写命令  <br /></td></tr>
+<tr class="separator:a63134966824ed0359d7d686db7e0a2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c709a92fee4bcf416b44829937a13b" id="r_ac5c709a92fee4bcf416b44829937a13b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5c709a92fee4bcf416b44829937a13b">WriteDat</a> (uint8_t IIC_Data)</td></tr>
+<tr class="memdesc:ac5c709a92fee4bcf416b44829937a13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">写数据  <br /></td></tr>
+<tr class="separator:ac5c709a92fee4bcf416b44829937a13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a072ec6e01c618c90f97345e18ca52240" id="r_a072ec6e01c618c90f97345e18ca52240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a072ec6e01c618c90f97345e18ca52240">HAL_I2C_WriteByte</a> (uint8_t addr, uint8_t data)</td></tr>
+<tr class="memdesc:a072ec6e01c618c90f97345e18ca52240"><td class="mdescLeft">&#160;</td><td class="mdescRight">IIC发送  <br /></td></tr>
+<tr class="separator:a072ec6e01c618c90f97345e18ca52240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523f5dbbc94ef1d2cf00b7a92bd48b5f" id="r_a523f5dbbc94ef1d2cf00b7a92bd48b5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a523f5dbbc94ef1d2cf00b7a92bd48b5f">SetStart</a> (uint8_t x, uint8_t y)</td></tr>
+<tr class="memdesc:a523f5dbbc94ef1d2cf00b7a92bd48b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置起点坐标,左上角为（0，0）  <br /></td></tr>
+<tr class="separator:a523f5dbbc94ef1d2cf00b7a92bd48b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f555376090a271b6f20381206d7d45d" id="r_a0f555376090a271b6f20381206d7d45d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f555376090a271b6f20381206d7d45d">OLED_Fill</a> (uint8_t Fill_Data)</td></tr>
+<tr class="memdesc:a0f555376090a271b6f20381206d7d45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">全屏填充  <br /></td></tr>
+<tr class="separator:a0f555376090a271b6f20381206d7d45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84dac1514b35a25525a26325b44b95f" id="r_ae84dac1514b35a25525a26325b44b95f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae84dac1514b35a25525a26325b44b95f">OLED_ON</a> (void)</td></tr>
+<tr class="memdesc:ae84dac1514b35a25525a26325b44b95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开OLED  <br /></td></tr>
+<tr class="separator:ae84dac1514b35a25525a26325b44b95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58b54b5472d412a77e678792ca0479e" id="r_ac58b54b5472d412a77e678792ca0479e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac58b54b5472d412a77e678792ca0479e">OLED_OFF</a> (void)</td></tr>
+<tr class="memdesc:ac58b54b5472d412a77e678792ca0479e"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭OLED  <br /></td></tr>
+<tr class="separator:ac58b54b5472d412a77e678792ca0479e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cce276843e111908511152509064fb6" id="r_a3cce276843e111908511152509064fb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cce276843e111908511152509064fb6">Display_Char</a> (uint8_t x, uint8_t y, char c)</td></tr>
+<tr class="memdesc:a3cce276843e111908511152509064fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">单个字符显示  <br /></td></tr>
+<tr class="separator:a3cce276843e111908511152509064fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeff4a8206c091641ebe7360d9348d171" id="r_aeff4a8206c091641ebe7360d9348d171"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeff4a8206c091641ebe7360d9348d171">Display_Str</a> (uint8_t x, uint8_t y, char *str)</td></tr>
+<tr class="memdesc:aeff4a8206c091641ebe7360d9348d171"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串显示  <br /></td></tr>
+<tr class="separator:aeff4a8206c091641ebe7360d9348d171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c98c05c6b516f7adca20b74cd01c4b5" id="r_a7c98c05c6b516f7adca20b74cd01c4b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c98c05c6b516f7adca20b74cd01c4b5">Display_IMG</a> (const uint8_t(*img)[128], uint8_t mode)</td></tr>
+<tr class="memdesc:a7c98c05c6b516f7adca20b74cd01c4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">图片全屏显示  <br /></td></tr>
+<tr class="separator:a7c98c05c6b516f7adca20b74cd01c4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517d3406f598d1938ee512779019e889" id="r_a517d3406f598d1938ee512779019e889"><td class="memItemLeft" align="right" valign="top"><a id="a517d3406f598d1938ee512779019e889" name="a517d3406f598d1938ee512779019e889"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OLED_IMGtest</b> (void)</td></tr>
+<tr class="separator:a517d3406f598d1938ee512779019e889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa978bafbdcd0aaa8b8ef9201c6373382" id="r_aa978bafbdcd0aaa8b8ef9201c6373382"><td class="memItemLeft" align="right" valign="top"><a id="aa978bafbdcd0aaa8b8ef9201c6373382" name="aa978bafbdcd0aaa8b8ef9201c6373382"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OLED_CHARtest</b> (void)</td></tr>
+<tr class="separator:aa978bafbdcd0aaa8b8ef9201c6373382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:accf2d4ad3df12952db629e0c234a92f8" id="r_accf2d4ad3df12952db629e0c234a92f8"><td class="memItemLeft" align="right" valign="top"><a id="accf2d4ad3df12952db629e0c234a92f8" name="accf2d4ad3df12952db629e0c234a92f8"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>ASCLL_6x8</b> [][6]</td></tr>
+<tr class="separator:accf2d4ad3df12952db629e0c234a92f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ba6c6ab6af159b13988d8218c253a04" id="r_a1ba6c6ab6af159b13988d8218c253a04"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ba6c6ab6af159b13988d8218c253a04">yuanshen</a> [8][128]</td></tr>
+<tr class="separator:a1ba6c6ab6af159b13988d8218c253a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>OLED显示屏模块的板级支持包（BSP） </p>
+<dl class="section author"><dt>作者</dt><dd>何 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2024/5/7 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>1.0 </dd></dl>
+<dl class="section see"><dt>参见</dt><dd><a href="http://t.csdnimg.cn/huaaY">http://t.csdnimg.cn/huaaY</a>, <a href="http://t.csdnimg.cn/IEsBm">http://t.csdnimg.cn/IEsBm</a> </dd></dl>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="a3cce276843e111908511152509064fb6" name="a3cce276843e111908511152509064fb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cce276843e111908511152509064fb6">&#9670;&#160;</a></span>Display_Char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Display_Char </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>单个字符显示 </p>
+<dl class="section note"><dt>注解</dt><dd>本程序中字体大小6*8，所以128的宽度只能显示21个字符，64的高度只能显示8个字符，且位置固定，需要任意坐标自行设计 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>横坐标，0 &lt;= x &lt;= 20 </td></tr>
+    <tr><td class="paramname">y</td><td>竖坐标，0 &lt;= y &lt;= 7 </td></tr>
+    <tr><td class="paramname">c</td><td>字符 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7c98c05c6b516f7adca20b74cd01c4b5" name="a7c98c05c6b516f7adca20b74cd01c4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c98c05c6b516f7adca20b74cd01c4b5">&#9670;&#160;</a></span>Display_IMG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Display_IMG </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t(*)</td>          <td class="paramname"><span class="paramname"><em>img</em></span>[128], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>图片全屏显示 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img</td><td>图片数组，大小8*128 </td></tr>
+    <tr><td class="paramname">mode</td><td>显示模式：mode=0，值为1的像素点显示黑色，值为0的像素点显示白色 mode=1，值为1的像素点显示白色，值为0的像素点显示黑色 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeff4a8206c091641ebe7360d9348d171" name="aeff4a8206c091641ebe7360d9348d171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeff4a8206c091641ebe7360d9348d171">&#9670;&#160;</a></span>Display_Str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Display_Str </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>字符串显示 </p>
+<dl class="section note"><dt>注解</dt><dd>本程序中字体大小6*8，所以128的宽度只能显示21个字符，超过自动换行 64的高度只能显示8个字符，且位置固定，需要任意坐标自行设计 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>横坐标，0 &lt;= x &lt;= 20 </td></tr>
+    <tr><td class="paramname">y</td><td>竖坐标，0 &lt;= y &lt;= 7 </td></tr>
+    <tr><td class="paramname">str</td><td>字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a072ec6e01c618c90f97345e18ca52240" name="a072ec6e01c618c90f97345e18ca52240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a072ec6e01c618c90f97345e18ca52240">&#9670;&#160;</a></span>HAL_I2C_WriteByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_I2C_WriteByte </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IIC发送 </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0f555376090a271b6f20381206d7d45d" name="a0f555376090a271b6f20381206d7d45d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f555376090a271b6f20381206d7d45d">&#9670;&#160;</a></span>OLED_Fill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OLED_Fill </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>Fill_Data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>全屏填充 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Fill_Data</td><td>需要填充的数据，0x00~0xff </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7372e46460a371e4d94a0ee7f5f1a1fd" name="a7372e46460a371e4d94a0ee7f5f1a1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7372e46460a371e4d94a0ee7f5f1a1fd">&#9670;&#160;</a></span>OLED_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OLED_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OLED屏幕初始化 </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac58b54b5472d412a77e678792ca0479e" name="ac58b54b5472d412a77e678792ca0479e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac58b54b5472d412a77e678792ca0479e">&#9670;&#160;</a></span>OLED_OFF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OLED_OFF </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>关闭OLED </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae84dac1514b35a25525a26325b44b95f" name="ae84dac1514b35a25525a26325b44b95f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84dac1514b35a25525a26325b44b95f">&#9670;&#160;</a></span>OLED_ON()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OLED_ON </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>打开OLED </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a523f5dbbc94ef1d2cf00b7a92bd48b5f" name="a523f5dbbc94ef1d2cf00b7a92bd48b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a523f5dbbc94ef1d2cf00b7a92bd48b5f">&#9670;&#160;</a></span>SetStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetStart </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置起点坐标,左上角为（0，0） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>横坐标，0 &lt;= x &lt;= 127 </td></tr>
+    <tr><td class="paramname">y</td><td>竖坐标，0 &lt;= y &lt;= 7 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a63134966824ed0359d7d686db7e0a2ea" name="a63134966824ed0359d7d686db7e0a2ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63134966824ed0359d7d686db7e0a2ea">&#9670;&#160;</a></span>WriteCmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteCmd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>IIC_Command</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>写命令 </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac5c709a92fee4bcf416b44829937a13b" name="ac5c709a92fee4bcf416b44829937a13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5c709a92fee4bcf416b44829937a13b">&#9670;&#160;</a></span>WriteDat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteDat </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>IIC_Data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>写数据 </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a1ba6c6ab6af159b13988d8218c253a04" name="a1ba6c6ab6af159b13988d8218c253a04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ba6c6ab6af159b13988d8218c253a04">&#9670;&#160;</a></span>yuanshen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t yuanshen[8][128]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0xF8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line">    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xE0, 0xF0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0xF0, 0xC0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0xF8, 0xFF, 0xFF, 0xFE, 0xE0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line">    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x02, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x03, 0x02, 0xE2, 0xE2, 0xE2, 0xC2, 0xC2, 0xC2, 0x42, 0x42, 0x42, 0x5A, 0x7E, 0x7E, 0x7A, 0x42, 0x42, 0x42, 0x42, 0xC2, 0xE2, 0xE2, 0xE2, 0xC2, 0x82, 0x02, 0x02, 0x42, 0x42, 0x42, 0x42, 0x43, 0x47, 0xCF, 0xFF, 0xDF, 0xC7, 0xE3, 0xF2, 0xE2, 0xC0, 0x80, 0x00, 0x00, 0xE0, 0xE0, 0xE0, 0xC0, 0xC0, 0xC2, 0x42, 0x47, 0x47, 0x4F, 0xFF, 0xFF, 0xDF, 0x47, 0x47, 0x43, 0x42, 0xC0, 0xE0, 0xE0, 0xE0, 0xE0, 0xC0, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line">    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x88, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x01, 0x00, 0x00, 0xFE, 0xFE, 0xFE, 0xFE, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x03, 0xF3, 0xF3, 0xF3, 0xF3, 0x00, 0xF0, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x10, 0x38, 0x38, 0x7C, 0xFE, 0xFF, 0xFF, 0xFF, 0x7C, 0x38, 0x38, 0x10, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line">    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xE0, 0xFF, 0xFF, 0x7F, 0x3F, 0x0F, 0xC1, 0xC0, 0xE0, 0xE3, 0xE3, 0xF3, 0xF3, 0xF1, 0x61, 0x41, 0x01, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x01, 0x41, 0x61, 0x73, 0xF3, 0xF3, 0xF3, 0xE3, 0xE0, 0xE0, 0xC0, 0xFF, 0xFF, 0xFF, 0x3F, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x1F, 0x1F, 0x0F, 0x03, 0x00, 0x3F, 0x3F, 0x3F, 0x3F, 0x1F, 0x0F, 0x04, 0x84, 0x84, 0xC4, 0xE4, 0xFF, 0xFF, 0xE5, 0xC4, 0x84, 0x84, 0x04, 0x07, 0x1F, 0x1F, 0x3F, 0x3F, 0x7F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line">    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x06, 0x03, 0x03, 0x01, 0x00, 0x00, 0x00, 0x01, 0x03, 0x03, 0x05, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7F, 0x3F, 0x1F, 0x0F, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x05, 0x07, 0x03, 0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x7F, 0x3F, 0x1F, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x03, 0x03, 0x0F, 0x7F, 0xFF, 0xFF, 0xFF, 0x1F, 0x07, 0x03, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line">    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0xFF, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line">    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00</div>
+<div class="line">    </div>
+<div class="line">    </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
